@@ -3,227 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMINA: Handcrafted Pearl Bags</title>
+    <title>BEAD TEXTILE - Handmade Pearl Bags Collection</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Use Inter font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#262626',
+                        'accent-gold': '#D4AF37',
+                        'off-white': '#F8F8F8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
     <style>
-        /* Custom CSS for elegant animations and styling */
-        :root {
-            --primary-light: #fef3c7; /* Soft Cream/Pearl */
-            --primary-dark: #6366f1; /* Deep Lavender/Violet */
-            --accent-gold: #f59e0b; /* Soft Gold */
+        /* Custom scrollbar for a cleaner look */
+        body::-webkit-scrollbar {
+            width: 8px;
         }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f7f3f1; /* Off-white background */
+        body::-webkit-scrollbar-thumb {
+            background-color: #D4AF37;
+            border-radius: 4px;
         }
-
-        /* Subtle background glow/pulse animation */
-        @keyframes subtleGlow {
-            0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.2); }
-            50% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4); }
-            100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.2); }
+        body::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
         }
-
-        .header-glow {
-            animation: subtleGlow 8s infinite ease-in-out;
-        }
-
-        /* Card and button hover effects */
         .product-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-        .cta-button {
-            transition: all 0.3s ease;
-        }
-        .cta-button:hover {
-            transform: scale(1.05);
-            background-color: #f97316; /* Darker orange on hover */
-        }
-
-        /* Scroll-triggered reveal effect (initial state) */
-        .reveal-item {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        /* State after being scrolled into view */
-        .reveal-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
     </style>
 </head>
-<body class="text-gray-800 antialiased">
+<body class="bg-off-white text-primary-dark font-sans antialiased">
 
-    <!-- Sticky Header -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md header-glow">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-            <a href="#" class="text-3xl font-bold tracking-widest text-amber-500 uppercase">LUMINA</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#hero" class="text-gray-600 hover:text-amber-600 transition duration-300">Home</a>
-                <a href="#products" class="text-gray-600 hover:text-amber-600 transition duration-300">Bags</a>
-                <a href="#about" class="text-gray-600 hover:text-amber-600 transition duration-300">Artisan</a>
-                <a href="#contact" class="text-gray-600 hover:text-amber-600 transition duration-300">Contact</a>
-            </nav>
-            <button class="md:hidden text-gray-600 hover:text-amber-600">
-                <!-- Simple Menu Icon (SVG for elegance) -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
+    <!-- Header & Navigation Bar -->
+    <header class="bg-primary-dark text-off-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold tracking-widest text-accent-gold">BEAD TEXTILE</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#collection" class="hover:text-accent-gold transition duration-200 font-medium">Collection</a>
+                <a href="#about" class="hover:text-accent-gold transition duration-200 font-medium">About</a>
+                <a href="#contact" class="hover:text-accent-gold transition duration-200 font-medium">Contact</a>
+            </div>
+            <!-- Mobile Menu Button (Placeholder for functionality) -->
+            <button class="md:hidden p-2 rounded-md hover:bg-gray-700 transition duration-200">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
-        </div>
+        </nav>
     </header>
 
-    <main>
-        <!-- 1. Hero Section -->
-        <section id="hero" class="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-32 bg-white/80">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
-                <!-- Text Content -->
-                <div class="md:w-1/2 mb-10 md:mb-0 reveal-item">
-                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-gray-900">
-                        Crafted <span class="text-amber-500">Excellence</span>, Threaded in Pearl.
-                    </h1>
-                    <p class="text-xl text-gray-600 mb-8">
-                        Discover the unique beauty of pearl-beaded bags, handmade for those who appreciate true artistry. Each piece is a masterpiece.
-                    </p>
-                    <a href="#products" class="cta-button inline-block bg-amber-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300">
-                        Shop the New Collection
-                    </a>
-                </div>
-                <!-- Image Placeholder -->
-                <div class="md:w-1/2 flex justify-center reveal-item" style="transition-delay: 0.15s;">
-                    <img src="https://placehold.co/500x500/fef3c7/f59e0b?text=Pearl+Bag"
-                         class="w-full max-w-sm rounded-3xl shadow-2xl transition duration-500 ease-in-out hover:rotate-2 hover:shadow-3xl"
-                         alt="Elegant handcrafted pearl bag mockup">
-                </div>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="relative h-96 bg-gray-100 flex items-center justify-center overflow-hidden" style="background-image: url('https://placehold.co/1200x400/D4AF37/262626?text=Handcrafted+Elegance'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-primary-dark bg-opacity-40"></div>
+        <div class="text-center z-10 p-4">
+            <h2 class="text-5xl md:text-7xl font-extrabold text-off-white tracking-tight leading-tight">
+                The Pearl Collection
+            </h2>
+            <p class="mt-4 text-xl text-off-white font-light italic">
+                Artistry woven into every bead.
+            </p>
+            <a href="#collection" class="mt-8 inline-block bg-accent-gold text-primary-dark font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-105">
+                Explore Bags
+            </a>
+        </div>
+    </section>
 
-        <!-- 2. Featured Products Section -->
-        <section id="products" class="py-20 bg-f7f3f1">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-center mb-12 reveal-item">Our Signature Collection</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <!-- Product Grid Section -->
+    <section id="collection" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h3 class="text-4xl font-bold text-center mb-12">Our Featured Designs (10 Products)</h3>
 
-                    <!-- Product Card 1: The Moonlight Clutch -->
-                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden reveal-item">
-                        <img src="https://placehold.co/600x400/fffbeb/f59e0b?text=Moonlight+Clutch"
-                             class="w-full h-64 object-cover transition duration-500 hover:scale-110"
-                             alt="Moonlight Clutch">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-2">The Moonlight Clutch</h3>
-                            <p class="text-gray-500 mb-4">Woven with iridescent pearls, perfect for evening wear.</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-3xl font-bold text-amber-600">$189</span>
-                                <button class="bg-gray-100 text-gray-700 py-2 px-4 rounded-full hover:bg-amber-100 transition duration-300">View Details</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product Card 2: The Daisy Chain Tote -->
-                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden reveal-item" style="transition-delay: 0.1s;">
-                        <img src="https://placehold.co/600x400/fef3c7/6366f1?text=Daisy+Tote"
-                             class="w-full h-64 object-cover transition duration-500 hover:scale-110"
-                             alt="Daisy Chain Tote">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-2">The Daisy Chain Tote</h3>
-                            <p class="text-gray-500 mb-4">A playful, structured bag featuring floral pearl patterns.</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-3xl font-bold text-amber-600">$249</span>
-                                <button class="bg-gray-100 text-gray-700 py-2 px-4 rounded-full hover:bg-amber-100 transition duration-300">View Details</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product Card 3: The Ocean Drop Shoulder Bag -->
-                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden reveal-item" style="transition-delay: 0.2s;">
-                        <img src="https://placehold.co/600x400/fae8ff/f59e0b?text=Ocean+Drop+Bag"
-                             class="w-full h-64 object-cover transition duration-500 hover:scale-110"
-                             alt="Ocean Drop Shoulder Bag">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-2">The Ocean Drop Shoulder Bag</h3>
-                            <p class="text-gray-500 mb-4">Featuring deep-sea colored pearls and a subtle sheen.</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-3xl font-bold text-amber-600">$199</span>
-                                <button class="bg-gray-100 text-gray-700 py-2 px-4 rounded-full hover:bg-amber-100 transition duration-300">View Details</button>
-                            </div>
-                        </div>
-                    </div>
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Product Card 1: Blue and White Geometric Bag -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://placehold.co/600x600/1C3AA3/FFFFFF?text=Blue+Geometric+Bag" alt="Blue and White Geometric Pearl Bag" class="w-full h-64 object-cover">
+                <div class="p-5 text-center">
+                    <h4 class="text-lg font-semibold mb-1">Aurora Blue Clutch</h4>
+                    <p class="text-gray-600 mb-3">Intricate crystal beads.</p>
+                    <button class="bg-primary-dark text-off-white py-2 px-4 rounded-lg text-sm hover:bg-gray-700 transition duration-300">View Details</button>
                 </div>
             </div>
-        </section>
 
-        <!-- 3. About/Artisan Story -->
-        <section id="about" class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10">
-                <div class="md:w-1/2 reveal-item">
-                    <h2 class="text-4xl font-bold mb-6">Our Artisan Story</h2>
-                    <p class="text-lg text-gray-600 mb-4">
-                        At LUMINA, every bag begins as a vision and ends as a wearable piece of art. Our artisans spend hours meticulously hand-threading each pearl, ensuring unmatched quality and durability. 
-                    </p>
-                    <p class="text-lg text-gray-600">
-                        We source sustainable, high-luster pearls to minimize our environmental footprint while maximizing the elegance of our finished products. This is slow fashion at its most beautiful.
-                    </p>
-                </div>
-                <div class="md:w-1/2 reveal-item" style="transition-delay: 0.1s;">
-                    <img src="https://placehold.co/500x350/fef3c7/6366f1?text=Artisan+Weaving"
-                         class="w-full rounded-2xl shadow-xl transition duration-500 hover:opacity-90"
-                         alt="Image of an artisan weaving pearls">
+            <!-- Product Card 2: Black Statement Bag -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://placehold.co/600x600/000000/F8F8F8?text=Black+Beaded+Statement" alt="Black Beaded Statement Bag" class="w-full h-64 object-cover">
+                <div class="p-5 text-center">
+                    <h4 class="text-lg font-semibold mb-1">Midnight Glamour</h4>
+                    <p class="text-gray-600 mb-3">Satin draw-string interior.</p>
+                    <button class="bg-primary-dark text-off-white py-2 px-4 rounded-lg text-sm hover:bg-gray-700 transition duration-300">View Details</button>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-gray-800 text-white py-12">
+            <!-- Product Card 3: Clear and Black Outline Bag -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://placehold.co/600x600/FFFFFF/000000?text=Clear+Black+Outline+Bag" alt="Clear and Black Outline Pearl Bag" class="w-full h-64 object-cover">
+                <div class="p-5 text-center">
+                    <h4 class="text-lg font-semibold mb-1">Monochrome Frame</h4>
+                    <p class="text-gray-600 mb-3">Clear square beads with black trim.</p>
+                    <button class="bg-primary-dark text-off-white py-2 px-4 rounded-lg text-sm hover:bg-gray-700 transition duration-300">View Details</button>
+                </div>
+            </div>
+            
+            <!-- Product Card 4: Ruby Red Crystal Handbag -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://placehold.co/600x600/CC0000/FFFFFF?text=Ruby+Red+Handbag" alt="Ruby Red Crystal Handbag" class="w-full h-64 object-cover">
+                <div class="p-5 text-center">
+                    <h4 class="text-lg font-semibold mb-1">The Scarlett Clutch</h4>
+                    <p class="text-gray-600 mb-3">Deep red crystal beads, top handle.</p>
+                    <button class="bg-primary-dark text-off-white py-2 px-4 rounded-lg text-sm hover:bg-gray-700 transition duration-300">View Details</button>
+                </div>
+            </div>
+
+            <!-- Product Card 5: Red Lip-Shaped Clutch -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://placehold.co/600x600/B22222/D4AF37?text=Lip+Shaped+Clutch" alt="Red Lip-Shaped Beaded Clutch" class="w-full h-64 object-cover">
+                <div class="p-5 text-center">
+                    <h4 class="text-lg font-semibold mb-1">Kissable Red Bag</h4>
+                    <p class="text-gray-600 mb-3">Unique lip design with gold chain.</p>
+                    <button class="bg-primary-dark text-off-white py-2 px-4 rounded-lg text-sm hover:bg-gray-700 transition duration-300">View Details</button>
+                </div>
+            </div>
+
+            <!-- Product Card 6: Watermelon Bag -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://placehold.co/600x600/FF5555/00AA00?text=Watermelon+Bag" alt="Watermelon Themed Beaded Bag" class="w-full h-64 object-cover">
+                <div class="p-5 text-center">
+                    <h4 class="text-lg font-semibold mb-1">Summer Slice Bag</h4>
+                    <p class="text-gray-600 mb-3">Fun, festive watermelon design.</p>
+                    <button class="bg-primary-dark text-off-white py-2 px-4 rounded-lg text-sm hover:bg-gray-700 transition duration-300">View Details</button>
+                </div>
+            </div>
+
+            <!-- Product Card 7: White Pearl Long Rectangular Bag -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://placehold.co/600x600/FAF0E6/D4AF37?text=White+Pearl+Rectangle" alt="White Pearl Rectangular Bag" class="w-full h-64 object-cover">
+                <div class="p-5 text-center">
+                    <h4 class="text-lg font-semibold mb-1">Classic Ivory Shoulder</h4>
+                    <p class="text-gray-600 mb-3">Timeless small pearl design.</p>
+                    <button class="bg-primary-dark text-off-white py-2 px-4 rounded-lg text-sm hover:bg-gray-700 transition duration-300">View Details</button>
+                </div>
+            </div>
+
+            <!-- Product Card 8: Amber/Champagne Rectangular Pouch -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://placehold.co/600x600/C8A97A/000000?text=Amber+Crystal+Clutch" alt="Amber Crystal Rectangular Pouch" class="w-full h-64 object-cover">
+                <div class="p-5 text-center">
+                    <h4 class="text-lg font-semibold mb-1">Champagne Cardholder</h4>
+                    <p class="text-gray-600 mb-3">Shimmering amber square beads.</p>
+                    <button class="bg-primary-dark text-off-white py-2 px-4 rounded-lg text-sm hover:bg-gray-700 transition duration-300">View Details</button>
+                </div>
+            </div>
+
+            <!-- Product Card 9: White Pearl Circle Handle Bag -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://placehold.co/600x600/F5F5DC/D4AF37?text=White+Pearl+Circle+Handle" alt="White Pearl Bag with Circular Handle" class="w-full h-64 object-cover">
+                <div class="p-5 text-center">
+                    <h4 class="text-lg font-semibold mb-1">Bridal Halo Bag</h4>
+                    <p class="text-gray-600 mb-3">Large circular gold handle.</p>
+                    <button class="bg-primary-dark text-off-white py-2 px-4 rounded-lg text-sm hover:bg-gray-700 transition duration-300">View Details</button>
+                </div>
+            </div>
+
+            <!-- Product Card 10: Black and Red Geometric Bag -->
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://placehold.co/600x600/000000/CC0000?text=Black+Red+Geometric" alt="Black and Red Geometric Beaded Bag" class="w-full h-64 object-cover">
+                <div class="p-5 text-center">
+                    <h4 class="text-lg font-semibold mb-1">Onyx Heart Clutch</h4>
+                    <p class="text-gray-600 mb-3">Bold red heart pattern.</p>
+                    <button class="bg-primary-dark text-off-white py-2 px-4 rounded-lg text-sm hover:bg-gray-700 transition duration-300">View Details</button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-4xl font-bold mb-6">Our Craftsmanship</h3>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                At BEAD TEXTILE, we blend traditional beadwork techniques with contemporary design. Every bag is meticulously handcrafted, ensuring a unique piece of art that promises durability, elegance, and a touch of luxury. Our focus is on sustainable and high-quality materials to bring you accessories that truly stand the test of time.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <footer id="contact" class="bg-primary-dark text-off-white py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
             <div class="text-center md:text-left mb-6 md:mb-0">
-                <p class="text-xl font-bold mb-2">LUMINA</p>
-                <p class="text-sm text-gray-400">&copy; 2025 Handcrafted Pearl Bags. All rights reserved.</p>
+                <h4 class="text-xl font-bold text-accent-gold mb-2">BEAD TEXTILE</h4>
+                <p class="text-sm">Handcrafted accessories, made with passion.</p>
             </div>
             <div class="flex space-x-6">
-                <a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Instagram</a>
-                <a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Facebook</a>
-                <a href="#" class="text-gray-400 hover:text-amber-500 transition duration-300">Email Us</a>
+                <a href="#" class="hover:text-accent-gold transition duration-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1.5 17h-2.148c-.28 0-.5-.224-.5-.5V9.5c0-.28.224-.5.5-.5H10.5c.28 0 .5.224.5.5v7c0 .28-.224.5-.5.5zm5.5 0h-2.148c-.28 0-.5-.224-.5-.5V9.5c0-.28.224-.5.5-.5H16c.28 0 .5.224.5.5v7c0 .28-.224.5-.5.5zM12 7.5a1 1 0 100-2 1 1 0 000 2z"/></svg>
+                </a>
+                <a href="#" class="hover:text-accent-gold transition duration-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1.5 17h-2.148c-.28 0-.5-.224-.5-.5V9.5c0-.28.224-.5.5-.5H10.5c.28 0 .5.224.5.5v7c0 .28-.224.5-.5.5zm5.5 0h-2.148c-.28 0-.5-.224-.5-.5V9.5c0-.28.224-.5.5-.5H16c.28 0 .5.224.5.5v7c0 .28-.224.5-.5.5zM12 7.5a1 1 0 100-2 1 1 0 000 2z"/></svg>
+                </a>
             </div>
         </div>
+        <p class="text-center text-gray-500 text-sm mt-8">© 2024 BEAD TEXTILE. All rights reserved.</p>
     </footer>
 
-    <script>
-        // JavaScript for Scroll-Triggered Animations (reveal-item class)
-        document.addEventListener("DOMContentLoaded", () => {
-            const revealItems = document.querySelectorAll('.reveal-item');
-
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    // Check if element is intersecting (in view) and if it hasn't been made visible yet
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        // Stop observing once it's visible to save performance
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                // Root margin defines the boundary around the viewport
-                rootMargin: '0px',
-                // Threshold of 0.1 means element is considered intersecting when 10% is visible
-                threshold: 0.1
-            });
-
-            revealItems.forEach(item => {
-                observer.observe(item);
-            });
-        });
-    </script>
 </body>
 </html>
